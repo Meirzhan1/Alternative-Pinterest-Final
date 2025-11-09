@@ -1,156 +1,156 @@
 # AsuStar - Alternative Pinterest
 
-Образовательный проект для финального экзамена по веб-технологиям. Pinterest-like приложение для просмотра, сохранения и обмена изображениями.
+Educational project for the final exam in Web Technologies. Pinterest-like application for viewing, saving, and sharing images.
 
-## 🚀 О проекте
+## About the Project
 
-AsuStar - это веб-приложение, созданное для демонстрации навыков работы с HTML, CSS и JavaScript. Проект представляет собой альтернативу Pinterest с возможностью просмотра изображений, создания аккаунтов, сохранения избранного и работы с внешним API.
+AsuStar is a web application created to demonstrate skills in HTML, CSS, and JavaScript. The project is an alternative to Pinterest with the ability to view images, create accounts, save favorites, and work with external APIs.
 
-## ✨ Основные возможности
+## Key Features
 
-### Аутентификация
-- Регистрация новых пользователей (Sign Up)
-- Вход в систему (Log In)
-- Хранение данных пользователей в localStorage
-- Персонализированные профили с отображением избранного
+### Authentication
+- New user registration (Sign Up)
+- Login to the system (Log In)
+- User data storage in localStorage
+- Personalized profiles with favorites display
 
-### Работа с изображениями
-- Просмотр галереи изображений
-- Поиск изображений по категориям и ключевым словам
-- Фильтрация по категориям (Anime, Art, Sport, Cars, Nature, Tech)
-- Загрузка собственных изображений
-- Сохранение в избранное
-- Система рейтингов (1-5 звезд)
+### Image Management
+- Image gallery viewing
+- Image search by categories and keywords
+- Filtering by categories (Anime, Art, Sport, Cars, Nature, Tech)
+- Upload your own images
+- Save to favorites
+- Rating system (1-5 stars)
 
-### Интерфейс
-- Адаптивный дизайн для всех устройств
-- Светлая и темная темы
-- Плавные анимации и переходы
-- Интуитивная навигация
+### Interface
+- Responsive design for all devices
+- Light and dark themes
+- Smooth animations and transitions
+- Intuitive navigation
 
-### Интеграция с API
-- Использование Unsplash API для поиска изображений
-- Динамическая загрузка изображений по категориям
-- Отображение результатов поиска в реальном времени
+### API Integration
+- Using Unsplash API for image search
+- Dynamic image loading by categories
+- Real-time search results display
 
-## 🛠 Технологии
+## Technologies
 
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla + jQuery)
 - **Framework**: Bootstrap 5
 - **API**: Unsplash API
-- **Хранение данных**: LocalStorage
-- **Хостинг**: GitHub Pages
+- **Data Storage**: LocalStorage
+- **Hosting**: GitHub Pages
 
-## 📁 Структура проекта
+## Project Structure
 
 ```
 Alternative-Pinterest-Final/
-├── index.html          # Главная страница с галереей
-├── profile.html        # Страница профиля пользователя
-├── detail.html         # Детальная страница изображения
-├── upload.html         # Страница загрузки изображений
-├── about.html          # Страница "О нас"
-├── search.html         # Страница поиска
-├── style.css           # Основные стили
-├── script.js           # JavaScript логика
-├── images/             # Локальные изображения
-└── sound/              # Звуковые эффекты
+├── index.html          # Main page with gallery
+├── profile.html        # User profile page
+├── detail.html         # Image detail page
+├── upload.html         # Image upload page
+├── about.html          # About us page
+├── search.html         # Search page
+├── style.css           # Main styles
+├── script.js           # JavaScript logic
+├── images/             # Local images
+└── sound/              # Sound effects
 ```
 
-## 🎯 Как использовать
+## How to Use
 
-### Для пользователей
+### For Users
 
-1. **Регистрация/Вход**
-   - Нажмите кнопку "Log-in" в правом верхнем углу
-   - Выберите вкладку "Sign Up" для регистрации или "Log In" для входа
-   - Заполните форму (имя, email, пароль)
+1. **Registration/Login**
+   - Click the "Log-in" button in the top right corner
+   - Select the "Sign Up" tab for registration or "Log In" tab to sign in
+   - Fill out the form (name, email, password)
 
-2. **Просмотр изображений**
-   - На главной странице доступна галерея изображений
-   - Используйте поиск для поиска по ключевым словам
-   - Нажмите на кнопки категорий (Anime, Art, Sport и т.д.) для фильтрации
+2. **Viewing Images**
+   - The main page displays an image gallery
+   - Use the search bar to search by keywords
+   - Click category buttons (Anime, Art, Sport, etc.) to filter
 
-3. **Работа с избранным**
-   - Наведите курсор на изображение и нажмите кнопку "Избранное"
-   - Все сохраненные изображения доступны в профиле
+3. **Working with Favorites**
+   - Hover over an image and click the "Favorite" button
+   - All saved images are available in your profile
 
-4. **Оценка изображений**
-   - Войдите в систему
-   - На карточке изображения используйте звезды для оценки (1-5)
-   - Ваша оценка сохраняется и влияет на общий рейтинг
+4. **Rating Images**
+   - Log in to the system
+   - Use the stars on the image card to rate (1-5)
+   - Your rating is saved and affects the overall rating
 
-5. **Загрузка изображений**
-   - Перейдите на страницу "Upload"
-   - Заполните форму и загрузите изображение
-   - После загрузки изображение появится в галерее
+5. **Uploading Images**
+   - Go to the "Upload" page
+   - Fill out the form and upload an image
+   - After uploading, the image will appear in the gallery
 
-### Для разработчиков
+### For Developers
 
-1. Клонируйте репозиторий:
+1. Clone the repository:
 ```bash
-git clone https://github.com/Meirzhan1/Alternative-Pinterest-Final.git
+git clone https://github.com/alixx21/Alternative-Pinterest-Final.git
 ```
 
-2. Откройте `index.html` в браузере
+2. Open `index.html` in a browser
 
-3. Для работы с Unsplash API потребуется API ключ (в проекте используется демо-ключ)
+3. An API key is required to work with Unsplash API (a demo key is used in the project)
 
-## 📱 Адаптивность
+## Responsiveness
 
-Проект полностью адаптирован для:
-- Десктопов (1920px+)
-- Планшетов (768px - 1024px)
-- Мобильных устройств (до 768px)
+The project is fully adapted for:
+- Desktops (1920px+)
+- Tablets (768px - 1024px)
+- Mobile devices (up to 768px)
 
-## 🌓 Темная тема
+## Dark Theme
 
-Переключение между светлой и темной темами доступно через:
-- Меню Settings → Toggle Dark Mode
-- Тема сохраняется в localStorage и восстанавливается при следующем посещении
+Switching between light and dark themes is available through:
+- Settings menu → Toggle Dark Mode
+- Theme is saved in localStorage and restored on next visit
 
-## 🔐 Валидация форм
+## Form Validation
 
-Все формы включают валидацию:
-- Email: проверка формата
-- Пароль: минимум 8 символов
-- Телефон: опциональное поле с проверкой формата
-- Обязательные поля: проверка заполнения
+All forms include validation:
+- Email: format check
+- Password: minimum 8 characters
+- Phone: optional field with format validation
+- Required fields: completion check
 
-## 📊 Хранение данных
+## Data Storage
 
-Все данные хранятся в localStorage браузера:
-- Данные пользователей
-- Избранные изображения (для каждого пользователя отдельно)
-- Рейтинги изображений
-- Тема оформления
+All data is stored in browser localStorage:
+- User data
+- Favorite images (separately for each user)
+- Image ratings
+- Theme settings
 
-## 🌐 Деплой
+## Deployment
 
-**Живой сайт**: [https://meirzhan1.github.io/Alternative-Pinterest-Final/](https://meirzhan1.github.io/Alternative-Pinterest-Final/)
+**Live Site**: [https://Meirzhan1.github.io/Alternative-Pinterest-Final/](https://Meirzhan1.github.io/Alternative-Pinterest-Final/)
 
-**Репозиторий**: [https://github.com/Meirzhan1/Alternative-Pinterest-Final](https://github.com/Meirzhan1/Alternative-Pinterest-Final)
+**Repository**: [https://github.com/Meirzhan1/Alternative-Pinterest-Final](https://github.com/Meirzhan1/Alternative-Pinterest-Final)
 
-## 👥 Команда
+## Team
 
 - **Meirzhan** - Frontend Developer
 - **Alikhan** - Designer & UI
 
-## 📝 Примечания
+## Notes
 
-- Проект создан в образовательных целях
-- Данные хранятся локально в браузере
-- Для продакшена рекомендуется использовать серверную часть для хранения данных
-- API ключ Unsplash в проекте - демонстрационный
+- Project created for educational purposes
+- Data is stored locally in the browser
+- For production, it is recommended to use a server-side for data storage
+- Unsplash API key in the project is for demonstration purposes
 
-## 🎨 Особенности дизайна
+## Design Features
 
-- Современный и чистый интерфейс
-- Плавные анимации и переходы
-- Интуитивная навигация
-- Высокий контраст для читаемости
-- Поддержка темной темы с корректными цветами
+- Modern and clean interface
+- Smooth animations and transitions
+- Intuitive navigation
+- High contrast for readability
+- Dark theme support with correct colors
 
 ---
 
-Создано с ❤️ командой "Creatives" для финального проекта по веб-технологиям
+Created with ❤️ by team "Creatives" for the final Web Technologies project
