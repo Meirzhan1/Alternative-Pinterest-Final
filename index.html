@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniPinterest</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="scroll-progress-bar"></div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-white bg-white w-100 fixed-top shadow">
+      <div class="container-fluid">
+        <a class="navbar-brand me-4" href="index.html">
+          <img src="Logo.png" alt="Logotype" class="logo" style="width: 40px; height: 40px;">
+          AsuStar
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="upload.html">Upload</a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="settingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
+           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+            <li>
+              <button class="dropdown-item" id="change-bg-btn">
+                Change Background Randomly
+              </button>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="px-3 py-2">
+              <small class="text-muted d-block">Current date and time:</small>
+              <span id="current-datetime" class="fw-semibold"></span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <button class="dropdown-item" id="toggle-dark-mode-btn">
+                Toggle Dark Mode
+              </button>
+            </li>
+            </ul>
+          </li>
+
+          </ul>
+          
+          <form class="d-flex align-items-center" role="search">
+  <div class="autocomplete-container">
+    <input type="search" class="search-bar form-control form-control-sm"
+           placeholder="Search..." aria-label="Search">
+    <ul id="suggestions" class="list-group position-absolute w-100"></ul>
+  </div>
+</form>
+
+
+          <button id="open-contact-popup" class="btn btn-outline-success btn-sm me-3">
+            Log-in
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="grid-layout pt-5 mt-3"> 
+    
+    <input type="checkbox" id="sidebar-toggle" hidden>
+
+    <aside class="sidebar">
+    <ul>
+      <li>
+        <a href="index.html"><img src="images/Category.png" alt="Category" class="nav-icon">ㅤCategory</a>
+      </li>
+
+      <li>
+        <a href="profile.html"><img src="images/Favvv.png" alt="Category" class="nav-icon">ㅤFavorites</a>
+      </li>
+
+      <li>
+        <a href="about.html"><img src="images/Settings.png" alt="Settings" class="nav-icon">ㅤInfo</a>
+      </li>
+    </ul>
+    </aside>
+
+    <main class="main">
+       
+      <div class="container my-4">
+        <div id="imageCarousel" class="carousel slide shadow-lg" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-4"><img src="https://picsum.photos/400/300?random=101" class="d-block w-100 rounded" alt="Carousel image 1"></div>
+                <div class="col-4"><img src="https://picsum.photos/400/300?random=102" class="d-block w-100 rounded" alt="Carousel image 2"></div>
+                <div class="col-4"><img src="https://picsum.photos/400/300?random=103" class="d-block w-100 rounded" alt="Carousel image 3"></div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-4"><img src="https://picsum.photos/400/300?random=104" class="d-block w-100 rounded" alt="Carousel image 4"></div>
+                <div class="col-4"><img src="https://picsum.photos/400/300?random=105" class="d-block w-100 rounded" alt="Carousel image 5"></div>
+                <div class="col-4"><img src="https://picsum.photos/400/300?random=106" class="d-block w-100 rounded" alt="Carousel image 6"></div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-4"><img src="https://picsum.photos/400/300?random=107" class="d-block w-100 rounded" alt="Carousel image 7"></div>
+                <div class="col-4"><img src="https://picsum.photos/400/300?random=108" class="d-block w-100 rounded" alt="Carousel image 8"></div>
+                <div class="col-4"><img src="https://picsum.photos/400/300?random=109" class="d-block w-100 rounded" alt="Carousel image 9"></div>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <h3 class="mt-5 text-center">Explore Categories</h3>
+<div class="text-center mb-4">
+  <button class="btn btn-outline-primary m-1" onclick="loadImages('anime')">Anime</button>
+  <button class="btn btn-outline-primary m-1" onclick="loadImages('art')">Art</button>
+  <button class="btn btn-outline-primary m-1" onclick="loadImages('sport')">Sport</button>
+  <button class="btn btn-outline-primary m-1" onclick="loadImages('cars')">Cars</button>
+  <button class="btn btn-outline-primary m-1" onclick="loadImages('nature')">Nature</button>
+</div>
+
+<div id="api-gallery" class="row gallery"></div>
+
+
+<div id="contact-modal" class="modal-custom">
+    <div class="modal-content-custom" style="max-width: 500px;">
+        <span class="close-button" id="close-popup-btn">&times;</span>
+        <h3 class="mb-3">Authentication</h3>
+        
+        <ul class="nav nav-tabs mb-3" id="auth-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-pane" type="button" role="tab">Log In</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup-pane" type="button" role="tab">Sign Up</button>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="auth-tab-content">
+            <div class="tab-pane fade show active" id="login-pane" role="tabpanel">
+                <form id="login-form">
+                    <div class="mb-3">
+                        <label for="login-email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="login-email" required>
+                        <div id="login-email-error" class="text-danger small mt-1"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="login-password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="login-password" required>
+                        <div id="login-password-error" class="text-danger small mt-1"></div>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Log In</button>
+                </form>
+            </div>
+            
+            <div class="tab-pane fade" id="signup-pane" role="tabpanel">
+                <form id="signup-form">
+                    <div class="mb-3">
+                        <label for="signup-name" class="form-label">Name (Required)</label>
+                        <input type="text" class="form-control" id="signup-name" required>
+                        <div id="signup-name-error" class="text-danger small mt-1"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signup-email" class="form-label">Email (Format Check)</label>
+                        <input type="email" class="form-control" id="signup-email" required>
+                        <div id="signup-email-error" class="text-danger small mt-1"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signup-phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="signup-phone" placeholder="+7 (XXX) XXX-XX-XX">
+                        <div id="signup-phone-error" class="text-danger small mt-1"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signup-password" class="form-label">Password (min. 8 characters)</label>
+                        <input type="password" class="form-control" id="signup-password" required>
+                        <div id="signup-password-error" class="text-danger small mt-1"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signup-confirm-password" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="signup-confirm-password" required>
+                        <div id="signup-confirm-password-error" class="text-danger small mt-1"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      <div class="row gallery">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="art">
+          <img class="card-img-top clickable-image" src="images/Art3.jpg" alt="Abstract Art 3" 
+               data-title="Abstract Art 3"
+               data-description="A vibrant abstract composition featuring bold colors and dynamic brushstrokes, creating a sense of movement and energy."
+               data-author="Sarah Johnson"
+               data-author-role="Photographer"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Art3.jpg"
+               data-category="art"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Abstract Art 3</h3>
+            <p class="card-text">A vibrant abstract composition featuring bold colors and dynamic brushstrokes, creating a sense of movement and energy.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="nature">
+          <img class="card-img-top clickable-image" src="images/Nature1.jpg" alt="Mountain Landscape" 
+               data-title="Mountain Landscape"
+               data-description="Breathtaking view of snow-capped peaks against a clear blue sky, showcasing the raw beauty of nature's grandeur."
+               data-author="Michael Chen"
+               data-author-role="Digital Artist"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Nature1.jpg"
+               data-category="nature"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Mountain Landscape</h3>
+            <p class="card-text">Breathtaking view of snow-capped peaks against a clear blue sky, showcasing the raw beauty of nature's grandeur.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="nature">
+          <img class="card-img-top clickable-image" src="images/Nature2.jpg" alt="Forest Path" 
+               data-title="Forest Path"
+               data-description="A serene forest trail bathed in dappled sunlight, inviting exploration into the peaceful depths of nature."
+               data-author="Emma Wilson"
+               data-author-role="Graphic Designer"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Nature2.jpg"
+               data-category="nature"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Forest Path</h3>
+            <p class="card-text">A serene forest trail bathed in dappled sunlight, inviting exploration into the peaceful depths of nature.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="nature">
+          <img class="card-img-top clickable-image" src="images/Nature3.jpg" alt="Ocean Sunset" 
+               data-title="Ocean Sunset"
+               data-description="A stunning sunset over the ocean horizon, painting the sky in hues of orange, pink, and purple as waves gently lap the shore."
+               data-author="David Martinez"
+               data-author-role="Visual Artist"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Nature3.jpg"
+               data-category="nature"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Ocean Sunset</h3>
+            <p class="card-text">A stunning sunset over the ocean horizon, painting the sky in hues of orange, pink, and purple as waves gently lap the shore.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="tech">
+          <img class="card-img-top clickable-image" src="images/Tech1.jpg" alt="Modern Technology" 
+               data-title="Modern Technology"
+               data-description="Cutting-edge technology showcase featuring sleek design and innovative interface, representing the future of digital innovation."
+               data-author="Lisa Anderson"
+               data-author-role="Creative Director"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Tech1.jpg"
+               data-category="tech"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Modern Technology</h3>
+            <p class="card-text">Cutting-edge technology showcase featuring sleek design and innovative interface, representing the future of digital innovation.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="tech">
+          <img class="card-img-top clickable-image" src="images/Tech2.jpg" alt="Digital Innovation" 
+               data-title="Digital Innovation"
+               data-description="A glimpse into the world of digital transformation, where advanced technologies meet creative solutions for modern challenges."
+               data-author="James Brown"
+               data-author-role="Illustrator"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Tech2.jpg"
+               data-category="tech"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Digital Innovation</h3>
+            <p class="card-text">A glimpse into the world of digital transformation, where advanced technologies meet creative solutions for modern challenges.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="frontend">
+          <img class="card-img-top clickable-image" src="images/Front1.jpg" alt="Web Design" 
+               data-title="Web Design"
+               data-description="Beautiful and intuitive web interface design showcasing modern frontend development principles and user experience excellence."
+               data-author="Sarah Johnson"
+               data-author-role="Photographer"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Front1.jpg"
+               data-category="frontend"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Web Design</h3>
+            <p class="card-text">Beautiful and intuitive web interface design showcasing modern frontend development principles and user experience excellence.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="frontend"> 
+          <img class="card-img-top clickable-image" src="images/Front2.jpg" alt="UI/UX Interface" 
+               data-title="UI/UX Interface"
+               data-description="A clean and modern user interface design demonstrating best practices in frontend development and responsive design."
+               data-author="Michael Chen"
+               data-author-role="Digital Artist"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Front2.jpg"
+               data-category="frontend"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">UI/UX Interface</h3>
+            <p class="card-text">A clean and modern user interface design demonstrating best practices in frontend development and responsive design.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="cars">
+          <img class="card-img-top clickable-image" src="images/Cars1.jpg" alt="Sports Car" 
+               data-title="Sports Car"
+               data-description="A powerful sports car with sleek aerodynamic design, captured in motion, showcasing automotive excellence and speed."
+               data-author="Emma Wilson"
+               data-author-role="Graphic Designer"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Cars1.jpg"
+               data-category="cars"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Sports Car</h3>
+            <p class="card-text">A powerful sports car with sleek aerodynamic design, captured in motion, showcasing automotive excellence and speed.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="cars">
+          <img class="card-img-top clickable-image" src="images/Cars2.jpg" alt="Luxury Vehicle" 
+               data-title="Luxury Vehicle"
+               data-description="An elegant luxury vehicle displaying refined craftsmanship and sophisticated design, representing the pinnacle of automotive luxury."
+               data-author="David Martinez"
+               data-author-role="Visual Artist"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Cars2.jpg"
+               data-category="cars"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Luxury Vehicle</h3>
+            <p class="card-text">An elegant luxury vehicle displaying refined craftsmanship and sophisticated design, representing the pinnacle of automotive luxury.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="cars">
+          <img class="card-img-top clickable-image" src="images/Cars3.jpg" alt="Classic Automobile" 
+               data-title="Classic Automobile"
+               data-description="A timeless classic car with vintage charm, capturing the essence of automotive history and timeless design elegance."
+               data-author="Lisa Anderson"
+               data-author-role="Creative Director"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Cars3.jpg"
+               data-category="cars"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Classic Automobile</h3>
+            <p class="card-text">A timeless classic car with vintage charm, capturing the essence of automotive history and timeless design elegance.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="anime">
+          <img class="card-img-top clickable-image" src="images/Anime1.jpg" alt="Anime Character 1" 
+               data-title="Anime Character 1"
+               data-description="A beautifully illustrated anime character with expressive features and vibrant colors, showcasing Japanese animation artistry."
+               data-author="James Brown"
+               data-author-role="Illustrator"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Anime1.jpg"
+               data-category="anime"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Anime Character 1</h3>
+            <p class="card-text">A beautifully illustrated anime character with expressive features and vibrant colors, showcasing Japanese animation artistry.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="anime">
+          <img class="card-img-top clickable-image" src="images/Anime2.jpg" alt="Anime Scene" 
+               data-title="Anime Scene"
+               data-description="A captivating anime scene with dynamic composition and emotional storytelling, bringing the animated world to life."
+               data-author="Sarah Johnson"
+               data-author-role="Photographer"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Anime2.jpg"
+               data-category="anime"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Anime Scene</h3>
+            <p class="card-text">A captivating anime scene with dynamic composition and emotional storytelling, bringing the animated world to life.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="anime">
+          <img class="card-img-top clickable-image" src="images/Anime3.jpg" alt="Anime Artwork" 
+               data-title="Anime Artwork"
+               data-description="Stunning anime artwork featuring intricate details and rich visual storytelling, exemplifying the beauty of Japanese animation style."
+               data-author="Michael Chen"
+               data-author-role="Digital Artist"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Anime3.jpg"
+               data-category="anime"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Anime Artwork</h3>
+            <p class="card-text">Stunning anime artwork featuring intricate details and rich visual storytelling, exemplifying the beauty of Japanese animation style.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="football">
+          <img class="card-img-top clickable-image" src="images/Football1.jpg" alt="Football Action" 
+               data-title="Football Action"
+               data-description="Intense football match moment capturing the passion and skill of the beautiful game in full action."
+               data-author="Emma Wilson"
+               data-author-role="Graphic Designer"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Football1.jpg"
+               data-category="football"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Football Action</h3>
+            <p class="card-text">Intense football match moment capturing the passion and skill of the beautiful game in full action.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="football">
+          <img class="card-img-top clickable-image" src="images/Football2.jpg" alt="Stadium Atmosphere" 
+               data-title="Stadium Atmosphere"
+               data-description="Electric atmosphere in a packed stadium as fans celebrate the excitement and drama of live football."
+               data-author="David Martinez"
+               data-author-role="Visual Artist"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Football2.jpg"
+               data-category="football"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Stadium Atmosphere</h3>
+            <p class="card-text">Electric atmosphere in a packed stadium as fans celebrate the excitement and drama of live football.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="football">
+          <img class="card-img-top clickable-image" src="images/Football3.jpg" alt="Championship Moment" 
+               data-title="Championship Moment"
+               data-description="A defining moment in football history, capturing the emotion and intensity of championship-level competition."
+               data-author="Lisa Anderson"
+               data-author-role="Creative Director"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Football3.jpg"
+               data-category="football"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Championship Moment</h3>
+            <p class="card-text">A defining moment in football history, capturing the emotion and intensity of championship-level competition.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="football">
+          <img class="card-img-top clickable-image" src="images/Football4.jpg" alt="Victory Celebration" 
+               data-title="Victory Celebration"
+               data-description="Joyful celebration of a hard-fought victory, showcasing the emotional highs that make football the world's most beloved sport."
+               data-author="James Brown"
+               data-author-role="Illustrator"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Football4.jpg"
+               data-category="football"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Victory Celebration</h3>
+            <p class="card-text">Joyful celebration of a hard-fought victory, showcasing the emotional highs that make football the world's most beloved sport.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="art">
+          <img class="card-img-top clickable-image" src="images/Art1.jpg" alt="Contemporary Art" 
+               data-title="Contemporary Art"
+               data-description="A striking contemporary art piece that challenges traditional boundaries and explores new forms of visual expression."
+               data-author="Sarah Johnson"
+               data-author-role="Photographer"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Art1.jpg"
+               data-category="art"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Contemporary Art</h3>
+            <p class="card-text">A striking contemporary art piece that challenges traditional boundaries and explores new forms of visual expression.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow-sm h-100" data-category="art">
+          <img class="card-img-top clickable-image" src="images/Art2.jpg" alt="Modern Masterpiece" 
+               data-title="Modern Masterpiece"
+               data-description="An exquisite modern masterpiece blending color, form, and emotion into a harmonious visual experience that captivates the viewer."
+               data-author="Michael Chen"
+               data-author-role="Digital Artist"
+               data-author-avatar="images/rugd.jpg"
+               data-image="images/Art2.jpg"
+               data-category="art"
+               style="cursor: pointer;">
+          <div class="overlay">
+                <button class="btn btn-sm btn-light border"><img src="images/Fav.png" alt="Избранное"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Download.png" alt="Сохранить"></button>
+                <button class="btn btn-sm btn-light border"><img src="images/Share.png" alt="Поделиться"></button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Modern Masterpiece</h3>
+            <p class="card-text">An exquisite modern masterpiece blending color, form, and emotion into a harmonious visual experience that captivates the viewer.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+          <h2 class="mb-4 text-center">Frequently Asked Questions (FAQ)</h2>
+    <div id="faq-accordion" class="mb-5">
+        <div class="accordion-item shadow-sm mb-3">
+            <div class="accordion-header">
+                <h3>Q: What is AsuStar?</h3>
+            </div>
+            <div class="accordion-content">
+                <p>AsuStar is an educational project developed to practice HTML, CSS, and JavaScript skills. You can view, save, and share images.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item shadow-sm mb-3">
+            <div class="accordion-header">
+                <h3>Q: What are the photo upload rules?</h3>
+            </div>
+            <div class="accordion-content">
+                <p>The upload form requires all mandatory fields (title, description, image) to be filled out.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item shadow-sm mb-3">
+            <div class="accordion-header">
+                <h3>Q: Who is on our team?</h3>
+            </div>
+            <div class="accordion-content">
+                <p>Our team is represented by Meirkhan (Frontend Developer) and Alikhan (Designer & UI).</p>
+            </div>
+        </div>
+    </div>
+    
+
+    </main>
+    
+    <footer>
+      <a>© 2025 AsuStar | Team “Creatives”</a>
+      <a>Meirzhan, Alikhan</a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <div id="toast" class="toast-message"></div>
+  <script src="script.js"></script>
+
+</body>
+</html>
