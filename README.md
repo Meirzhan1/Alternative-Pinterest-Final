@@ -153,4 +153,4 @@ All data is stored in browser localStorage:
 
 ---
 
-Created with ❤️ by team "Creatives" for the final Web Technologies project
+Created with ❤️ by team "AsuStar" for the final Web Technologies project
