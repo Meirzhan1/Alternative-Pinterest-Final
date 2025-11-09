@@ -89,7 +89,7 @@ Alternative-Pinterest-Final/
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/alixx21/Alternative-Pinterest-Final.git
+git clone https://github.com/Meirzhan1/Alternative-Pinterest-Final.git
 ```
 
 2. Откройте `index.html` в браузере
@@ -127,9 +127,9 @@ git clone https://github.com/alixx21/Alternative-Pinterest-Final.git
 
 ## 🌐 Деплой
 
-**Живой сайт**: [https://alixx21.github.io/Alternative-Pinterest-Final/](https://alixx21.github.io/Alternative-Pinterest-Final/)
+**Живой сайт**: [https://meirzhan1.github.io/Alternative-Pinterest-Final/](https://meirzhan1.github.io/Alternative-Pinterest-Final/)
 
-**Репозиторий**: [https://github.com/alixx21/Alternative-Pinterest-Final](https://github.com/alixx21/Alternative-Pinterest-Final)
+**Репозиторий**: [https://github.com/Meirzhan1/Alternative-Pinterest-Final](https://github.com/Meirzhan1/Alternative-Pinterest-Final)
 
 ## 👥 Команда
 
